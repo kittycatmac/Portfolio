@@ -1,0 +1,2220 @@
+/* ------------------------------------------------------
+  Stylesheet Guide
+  ------------------------------------------------------
+
+    1. Global
+        1.1. Fonts
+            1.1.1. Header font - Abril Fatface
+            1.1.2. Text font - Open Sans
+        1.2. General styles
+        1.3. Color scheme
+            1.3.1. Blue (#4aa8fa) - Color scheme
+            1.3.2. Pink (#fa5a88) - Color scheme
+            1.3.3. Green (#2ddf7b) - Color scheme
+        1.4. Preloader
+        1.5. Typography
+        1.6. Custom class
+        1.7. Icons class
+    2. Header
+        2.1. Top panel, logotype
+        2.2. Header text
+    3. Section
+        3.1 Section header
+        3.2. Portfolio section
+            3.2.1. Portfolio filter navigation
+            3.2.2. Portfolio filter item
+        3.3. Experience section
+            3.3.1. Experience filter navigation
+            3.3.2. Experience timeline
+            3.3.3. Experience content
+        3.4. Skills section
+            3.4.1. Skills bar
+            3.4.2. Skills term
+        3.5. Contacts section
+            3.5.1. Contact details
+            3.5.2. Contact form
+    4. Footer
+    5. Pop-up window
+    6. Media queries
+
+------------------------------------------------------ */
+
+/* ------------------------------------------------------
+    1. Global
+------------------------------------------------------ */
+
+    /* ------------------------------------------------------
+        1.1. Fonts
+    ------------------------------------------------------ */
+
+        /* ------------------------------------------------------
+            1.1.1. Header font - Abril Fatface
+        ------------------------------------------------------ */
+
+            @font-face {
+              font-family: "Abril Fatface";
+              font-weight: normal;
+              font-style: normal;
+              src: url("../fonts/Abril-Fatface/AbrilFatface-Regular.eot");
+              src: url("../fonts/Abril-Fatface/AbrilFatface-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Abril-Fatface/AbrilFatface-Regular.woff") format("woff"), url("../fonts/Abril-Fatface/AbrilFatface-Regular.ttf") format("truetype");
+            }
+
+        /* ------------------------------------------------------
+            1.1.2. Text font - Open Sans
+        ------------------------------------------------------ */
+
+            @font-face {
+              font-family: "Open Sans";
+              font-weight: normal;
+              font-style: normal;
+              src: url("../fonts/Open-Sans/OpenSans-Regular.eot");
+              src: url("../fonts/Open-Sans/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans/OpenSans-Regular.woff") format("woff"), url("../fonts/Open-Sans/OpenSans-Regular.ttf") format("truetype");
+            }
+
+            @font-face {
+              font-family: "Open Sans";
+              font-weight: 600;
+              font-style: normal;
+              src: url("../fonts/Open-Sans/OpenSans-SemiBold.eot");
+              src: url("../fonts/Open-Sans/OpenSans-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans/OpenSans-SemiBold.woff") format("woff"), url("../fonts/Open-Sans/OpenSans-SemiBold.ttf") format("truetype");
+            }
+
+            @font-face {
+              font-family: "Open Sans";
+              font-weight: 700;
+              font-style: normal;
+              src: url("../fonts/Open-Sans/OpenSans-Bold.eot");
+              src: url("../fonts/Open-Sans/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans/OpenSans-Bold.woff") format("woff"), url("../fonts/Open-Sans/OpenSans-Bold.ttf") format("truetype");
+            }
+
+    /* ------------------------------------------------------
+        1.2. General styles
+    ------------------------------------------------------ */
+
+        ::-webkit-input-placeholder {
+          color: #666;
+        }
+        ::-moz-placeholder {
+          color: #666;
+        }
+        :-ms-input-placeholder {
+          color: #666;
+        }
+        ::-ms-input-placeholder {
+          color: #666;
+        }
+        ::placeholder {
+          color: #666;
+        }
+
+        ::-moz-selection {
+          background-color: #eee;
+          color: #fff;
+        }
+
+        ::selection {
+          background-color: #eee;
+          color: #fff;
+        }
+
+        html {
+          overflow-x: hidden;
+        }
+
+        html.coda-overflow-hidden {
+          overflow: hidden;
+        }
+
+        body {
+          font-size: 16px;
+          min-width: 320px;
+          position: relative;
+          line-height: 1.7;
+          font-family: "Open Sans", sans-serif;
+          color: #272727;
+        }
+
+        body input, body textarea {
+          border: #666 1px solid;
+          outline: none;
+        }
+
+    /* ------------------------------------------------------
+        1.3. Color scheme
+    ------------------------------------------------------ */
+
+        /* ------------------------------------------------------
+            1.3.1. Blue (#4aa8fa) - Color scheme
+        ------------------------------------------------------ */
+
+            .coda-blue-color-scheme .coda-preloader .coda-loader .coda-loader-bar {
+              background-color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .text-cursor:after {
+              background-color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .coda-underscore {
+              text-decoration: none;
+              -webkit-transition: all .3s linear;
+              -o-transition: all .3s linear;
+              transition: all .3s linear;
+              display: inline;
+              background: -webkit-gradient(linear, right top, left top, from(#4aa8fa));
+              background: -webkit-linear-gradient(right, #4aa8fa);
+              background: -o-linear-gradient(right, #4aa8fa);
+              background: linear-gradient(to left, #4aa8fa);
+              -webkit-background-size: 0px 30px;
+                      background-size: 0px 30px;
+              background-repeat: no-repeat;
+              background-position: right 85%;
+            }
+
+            .coda-blue-color-scheme .coda-underscore:hover, .coda-blue-color-scheme .coda-underscore.coda-active {
+              background-position: left 85%;
+              -webkit-background-size: 97% 30px;
+                      background-size: 97% 30px;
+            }
+
+            .coda-blue-color-scheme .coda-experience-timeline.coda-active .coda-experience-timeline-caption.coda-active .coda-time-interval,
+            .coda-blue-color-scheme .coda-experience-description-item.coda-active .coda-experience-description.coda-active .coda-experience-article-header .coda-time-interval {
+              color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption:before {
+              background-color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-bar {
+              background-color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description .coda-term-name {
+              color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .coda-contacts-section .coda-contact-form .coda-input-box .coda-bottom-border:after {
+              background-color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-name,
+            .coda-blue-color-scheme .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:required:valid ~ .coda-label {
+              color: #4aa8fa;
+            }
+
+            .coda-blue-color-scheme .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container:after {
+              background-color: #4aa8fa;
+            }
+
+        /* ------------------------------------------------------
+            1.3.2. Pink (#fa5a88) - Color scheme
+        ------------------------------------------------------ */
+
+            .coda-pink-color-scheme .coda-preloader .coda-loader .coda-loader-bar {
+              background-color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .text-cursor:after {
+              background-color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .coda-underscore {
+              text-decoration: none;
+              -webkit-transition: all .3s linear;
+              -o-transition: all .3s linear;
+              transition: all .3s linear;
+              display: inline;
+              background: -webkit-gradient(linear, right top, left top, from(#fa5a88));
+              background: -webkit-linear-gradient(right, #fa5a88);
+              background: -o-linear-gradient(right, #fa5a88);
+              background: linear-gradient(to left, #fa5a88);
+              -webkit-background-size: 0px 30px;
+                      background-size: 0px 30px;
+              background-repeat: no-repeat;
+              background-position: right 85%;
+            }
+
+            .coda-pink-color-scheme .coda-underscore:hover {
+              text-decoration: none;
+              background-position: left 85%;
+              -webkit-background-size: 97% 30px;
+                      background-size: 97% 30px;
+            }
+
+            .coda-pink-color-scheme .coda-experience-timeline.coda-active .coda-experience-timeline-caption.coda-active .coda-time-interval,
+            .coda-pink-color-scheme .coda-experience-description-item.coda-active .coda-experience-description.coda-active .coda-experience-article-header .coda-time-interval {
+              color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption:before {
+              background-color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-bar {
+              background-color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description .coda-term-name {
+              color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .coda-contacts-section .coda-contact-form .coda-input-box .coda-bottom-border:after {
+              background-color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-name,
+            .coda-pink-color-scheme .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:required:valid ~ .coda-label {
+              color: #fa5a88;
+            }
+
+            .coda-pink-color-scheme .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container:after {
+              background-color: #fa5a88;
+            }
+
+          /* ------------------------------------------------------
+              1.3.3. Green (#2ddf7b) - Color scheme
+          ------------------------------------------------------ */
+
+            .coda-green-color-scheme .coda-preloader .coda-loader .coda-loader-bar {
+              background-color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .text-cursor:after {
+              background-color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .coda-underscore {
+              text-decoration: none;
+              -webkit-transition: all .3s linear;
+              -o-transition: all .3s linear;
+              transition: all .3s linear;
+              display: inline;
+              background: -webkit-gradient(linear, right top, left top, from(#2ddf7b));
+              background: -webkit-linear-gradient(right, #2ddf7b);
+              background: -o-linear-gradient(right, #2ddf7b);
+              background: linear-gradient(to left, #2ddf7b);
+              -webkit-background-size: 0px 30px;
+                      background-size: 0px 30px;
+              background-repeat: no-repeat;
+              background-position: right 85%;
+            }
+
+            .coda-green-color-scheme .coda-underscore:hover {
+              text-decoration: none;
+              background-position: left 85%;
+              -webkit-background-size: 97% 30px;
+                      background-size: 97% 30px;
+            }
+
+            .coda-green-color-scheme .coda-experience-timeline.coda-active .coda-experience-timeline-caption.coda-active .coda-time-interval,
+            .coda-green-color-scheme .coda-experience-description-item.coda-active .coda-experience-description.coda-active .coda-experience-article-header .coda-time-interval {
+              color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption:before {
+              background-color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-bar {
+              background-color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description .coda-term-name {
+              color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .coda-contacts-section .coda-contact-form .coda-input-box .coda-bottom-border:after {
+              background-color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-name,
+            .coda-green-color-scheme .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:required:valid ~ .coda-label {
+              color: #2ddf7b;
+            }
+
+            .coda-green-color-scheme .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container:after {
+              background-color: #2ddf7b;
+            }
+
+        /* ------------------------------------------------------
+            1.4. Preloader
+        ------------------------------------------------------ */
+
+            .coda-preloader {
+              position: fixed;
+              display: block;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background-color: #fff;
+              z-index: 999;
+            }
+
+            .coda-preloader .coda-loader {
+              position: absolute;
+              display: block;
+              top: 50%;
+              left: 50%;
+              width: 300px;
+              height: 3px;
+              background-color: #eee;
+              -webkit-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+              -webkit-transform: translate(-50%, -50%);
+                  -ms-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+            }
+
+            .coda-preloader .coda-loader .coda-percentage {
+              position: absolute;
+              bottom: 9px;
+              font-size: 14px;
+              letter-spacing: 1px;
+              left: 53%;
+              -webkit-transform: translateX(-50%);
+                  -ms-transform: translateX(-50%);
+                      transform: translateX(-50%);
+            }
+
+            .coda-preloader .coda-loader .coda-loader-bar {
+              position: absolute;
+              display: block;
+              height: 3px;
+              width: 2px;
+              top: 0;
+              left: 0;
+            }
+
+        /* ------------------------------------------------------
+            1.5. Typography
+        ------------------------------------------------------ */
+
+            b, strong {
+              font-weight: 700;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+              font-family: "Abril Fatface", serif;
+              font-weight: normal;
+              line-height: 1;
+            }
+
+            h1 {
+              font-size: 84px;
+            }
+
+            h2 {
+              font-size: 72px;
+            }
+
+            h3 {
+              font-size: 60px;
+            }
+
+            h4 {
+              font-size: 48px;
+            }
+
+            h5 {
+              font-size: 36px;
+            }
+
+            h6 {
+              font-size: 30px;
+            }
+
+        /* ------------------------------------------------------
+            1.6. Custom class
+        ------------------------------------------------------ */
+
+            .vh100 {
+              height: 100vh;
+            }
+
+            .h100 {
+              height: 100%;
+            }
+
+            .coda-fade-in {
+              -webkit-transform: translateZ(0);
+                      transform: translateZ(0);
+              -webkit-animation: codaFadeIn .8s ease-in-out;
+                      animation: codaFadeIn .8s ease-in-out;
+            }
+
+            .coda-fade-left {
+              -webkit-transform: translateZ(0);
+                      transform: translateZ(0);
+              -webkit-animation: codaFadeLeft 1s ease-in-out;
+                      animation: codaFadeLeft 1s ease-in-out;
+            }
+
+            @-webkit-keyframes codaFadeLeft {
+              0% {
+                -webkit-transform: translateX(-2%);
+                        transform: translateX(-2%);
+                opacity: 0;
+              }
+              100% {
+                -webkit-transform: translateX(0);
+                        transform: translateX(0);
+                opacity: 1;
+              }
+            }
+
+            @keyframes codaFadeLeft {
+              0% {
+                -webkit-transform: translateX(-2%);
+                        transform: translateX(-2%);
+                opacity: 0;
+              }
+              100% {
+                -webkit-transform: translateX(0);
+                        transform: translateX(0);
+                opacity: 1;
+              }
+            }
+
+            .coda-img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+                 object-fit: cover;
+              -o-object-position: 50% 50%;
+                 object-position: 50% 50%;
+              -webkit-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+            }
+
+            .coda-img-responsive {
+              display: block;
+              width: 100%;
+              height: auto;
+              -webkit-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+            }
+
+            .text-center {
+              text-align: center;
+            }
+
+            .coda-blur {
+              -webkit-filter: blur(15px);
+                      filter: blur(15px);
+            }
+
+            .coda-underscore:focus {
+              outline: none;
+            }
+
+            .coda-underscore {
+              text-decoration: none;
+              -webkit-transition: all .3s linear;
+              -o-transition: all .3s linear;
+              transition: all .3s linear;
+              display: inline-block;
+            }
+
+            .coda-underscore:hover, .coda-underscore.coda-active {
+              text-decoration: none;
+              color: #272727;
+            }
+
+            .coda-scroll-to-top {
+              position: fixed;
+              bottom: 0;
+              right: -20px;
+              height: 20px;
+              -webkit-transform: rotate(-90deg);
+                  -ms-transform: rotate(-90deg);
+                      transform: rotate(-90deg);
+              font-size: 14px;
+              letter-spacing: 2px;
+              line-height: 1;
+              font-weight: 600;
+              color: #272727;
+              pointer-events: none;
+              visibility: hidden;
+              opacity: 0;
+              -webkit-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+              z-index: 90;
+            }
+
+            .coda-scroll-to-top.coda-underscore {
+              -webkit-background-size: 0px 10px;
+                      background-size: 0px 10px;
+              background-position: right 60%;
+            }
+
+            .coda-scroll-to-top.coda-underscore:hover {
+              -webkit-background-size: 95% 10px;
+                      background-size: 95% 10px;
+              background-position: left 60%;
+            }
+
+            .coda-scroll-to-top .coda-left-arrow-ico:before {
+              background-color: #272727;
+            }
+
+            .coda-scroll-to-top .coda-left-arrow-ico:after {
+              border-top: 1px solid #272727;
+              border-right: 1px solid #272727;
+            }
+
+            .coda-scroll-to-top.coda-active-btn {
+              bottom: 50%;
+              pointer-events: auto;
+              visibility: visible;
+              opacity: 1;
+            }
+
+            .coda-scroll-to-top:hover .coda-left-arrow-ico {
+              -webkit-transform: translateX(25px);
+                  -ms-transform: translateX(25px);
+                      transform: translateX(25px);
+            }
+
+        /* ------------------------------------------------------
+            1.7. Icons class
+        ------------------------------------------------------ */
+
+            .coda-left-arrow-ico {
+              display: inline-block;
+              position: relative;
+              vertical-align: middle;
+              margin-bottom: 3px;
+              -webkit-transform: translateX(10px);
+                  -ms-transform: translateX(10px);
+                      transform: translateX(10px);
+              -webkit-transition: all .5s ease;
+              -o-transition: all .5s ease;
+              transition: all .5s ease;
+            }
+
+            .coda-left-arrow-ico:before, .coda-left-arrow-ico:after {
+              content: '';
+              position: absolute;
+              top: 50%;
+            }
+
+            .coda-left-arrow-ico:before {
+              width: 15px;
+              height: 1px;
+              background-color: #fff;
+            }
+
+            .coda-left-arrow-ico:after {
+              left: 8px;
+              margin-top: -3px;
+              width: 7px;
+              height: 7px;
+              border-top: 1px solid #fff;
+              border-right: 1px solid #fff;
+              -webkit-transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                      transform: rotate(45deg);
+            }
+
+            .coda-menu-ico {
+              cursor: pointer;
+              width: 40px;
+            }
+
+            .coda-menu-ico .coda-label {
+              display: inline-block;
+              font-size: 12px;
+              letter-spacing: 2px;
+              line-height: 1;
+              color: #fff;
+              margin-bottom: 9px;
+              -webkit-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+            }
+
+            .coda-menu-ico .coda-sandwich-top, .coda-menu-ico .coda-sandwich-center, .coda-menu-ico .coda-sandwich-bottom {
+              display: block;
+              width: 40px;
+              height: 2px;
+              background-color: #fff;
+              -webkit-transition: all 0.5s cubic-bezier(0.5, -2.26, 0.42, 2.54);
+              -o-transition: all 0.5s cubic-bezier(0.5, -2.26, 0.42, 2.54);
+              transition: all 0.5s cubic-bezier(0.5, -2.26, 0.42, 2.54);
+            }
+
+            .coda-menu-ico .coda-sandwich-center, .coda-menu-ico .coda-sandwich-bottom {
+              -webkit-transform: translateX(10px);
+                  -ms-transform: translateX(10px);
+                      transform: translateX(10px);
+              margin-top: 10px;
+            }
+
+            .coda-menu-ico .coda-sandwich-bottom {
+              width: 20px;
+            }
+
+            .coda-menu-ico:hover .coda-sandwich-top {
+              -webkit-animation: codaWidth 0.5s cubic-bezier(0, 1.26, 0.42, 2.54);
+                      animation: codaWidth 0.5s cubic-bezier(0, 1.26, 0.42, 2.54);
+            }
+
+            .coda-menu-ico:hover .coda-sandwich-center, .coda-menu-ico:hover .coda-sandwich-bottom {
+              -webkit-transform: translateX(0px);
+                  -ms-transform: translateX(0px);
+                      transform: translateX(0px);
+              -webkit-transform: translateZ(0);
+                      transform: translateZ(0);
+            }
+
+            .coda-menu-ico:hover .coda-sandwich-bottom {
+              width: 40px;
+            }
+
+            @-webkit-keyframes codaWidth {
+              0% {
+                width: 30px;
+              }
+              50% {
+                width: 20px;
+              }
+              100% {
+                width: 40px;
+              }
+            }
+
+            @keyframes codaWidth {
+              0% {
+                width: 30px;
+              }
+              50% {
+                width: 20px;
+              }
+              100% {
+                width: 40px;
+              }
+            }
+
+            .coda-close-ico {
+              cursor: pointer;
+              width: 40px;
+              height: 60px;
+            }
+
+            .coda-close-ico .coda-label {
+              display: inline-block;
+              font-size: 12px;
+              letter-spacing: 2px;
+              line-height: 1;
+              color: #fff;
+              margin-bottom: 9px;
+              -webkit-transition: all .3s ease-in-out;
+              -o-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+            }
+
+            .coda-close-ico .coda-close-wrap {
+              position: relative;
+              display: block;
+              top: 12px;
+              left: -1px;
+              -webkit-transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                      transform: rotate(45deg);
+              -webkit-transition: all .5s ease-in-out;
+              -o-transition: all .5s ease-in-out;
+              transition: all .5s ease-in-out;
+            }
+
+            .coda-close-ico .coda-close-wrap .coda-close-horizontal, .coda-close-ico .coda-close-wrap .coda-close-vertical {
+              display: block;
+              width: 40px;
+              height: 2px;
+              background-color: #fff;
+            }
+
+            .coda-close-ico .coda-close-wrap .coda-close-horizontal {
+              -webkit-transform: translateY(2px);
+                  -ms-transform: translateY(2px);
+                      transform: translateY(2px);
+            }
+
+            .coda-close-ico .coda-close-wrap .coda-close-vertical {
+              -webkit-transform: rotate(90deg);
+                  -ms-transform: rotate(90deg);
+                      transform: rotate(90deg);
+            }
+
+            .coda-close-ico:hover .coda-close-wrap {
+              -webkit-transform: rotate(225deg);
+                  -ms-transform: rotate(225deg);
+                      transform: rotate(225deg);
+            }
+
+/* ------------------------------------------------------
+    2. Header
+------------------------------------------------------ */
+
+    .coda-header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      -webkit-background-size: cover;
+              background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .coda-header:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      height: 50px;
+      margin-left: -1px;
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    .coda-header:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: -webkit-linear-gradient(40deg, rgba(0, 0, 0, 0.7) 20%, transparent 50%);
+      background: -o-linear-gradient(40deg, rgba(0, 0, 0, 0.7) 20%, transparent 50%);
+      background: linear-gradient(50deg, rgba(0, 0, 0, 0.7) 20%, transparent 50%);
+      z-index: 0;
+    }
+
+    .coda-header .coda-background-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -o-object-position: 50% 50%;
+         object-position: 50% 50%;
+      -webkit-transform: translate(0);
+          -ms-transform: translate(0);
+              transform: translate(0);
+      -webkit-animation: codaScale 60s ease-in-out alternate infinite;
+              animation: codaScale 60s ease-in-out alternate infinite;
+    }
+
+    @-webkit-keyframes codaScale {
+      0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+      }
+    }
+
+    @keyframes codaScale {
+      0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+      }
+    }
+
+        /* ------------------------------------------------------
+            2.1. Top panel, logotype
+        ------------------------------------------------------ */
+
+            .coda-top-panel {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              z-index: 2;
+              color: #fff;
+              margin-top: 50px;
+            }
+
+            .coda-top-panel .coda-logo {
+              display: block;
+              line-height: 1;
+              font-size: 24px;
+              font-weight: 600;
+            }
+
+            .coda-top-panel .coda-logo .text-cursor {
+              margin: 0;
+              margin-left: 5px;
+            }
+
+            .coda-top-panel .coda-logo .text-cursor:after {
+              content: '';
+              position: absolute;
+              display: block;
+              height: 100%;
+              width: 3px;
+              top: 0;
+              right: 10px;
+              -webkit-animation: codaBlink .8s infinite;
+                      animation: codaBlink .8s infinite;
+            }
+
+            @-webkit-keyframes codaBlink {
+              0% {
+                opacity: 0;
+              }
+              50% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+
+            @keyframes codaBlink {
+              0% {
+                opacity: 0;
+              }
+              50% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+
+        /* ------------------------------------------------------
+            2.2. Header text
+        ------------------------------------------------------ */
+
+            .coda-header-text {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              color: #fff;
+              z-index: 1;
+            }
+
+            .coda-header-text .vh100 {
+              min-height: 500px;
+            }
+
+            .coda-header-text .coda-profession {
+              font-size: 18px;
+              font-weight: 600;
+              letter-spacing: 7px;
+              text-transform: uppercase;
+              text-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+              margin: 0 0 8px 5px;
+            }
+
+            .coda-header-text .coda-name {
+              font-size: 108px;
+              line-height: .9;
+              text-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .coda-header-text .coda-pop-up-btn {
+              display: inline-block;
+              color: #fff;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              margin: 80px 0 0 5px;
+              padding-left: 3px;
+              text-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+              -webkit-background-size: 0% 10px;
+                      background-size: 0% 10px;
+            }
+
+            .coda-header-text .coda-pop-up-btn:hover {
+              color: #fff;
+              -webkit-background-size: 95% 10px;
+                      background-size: 95% 10px;
+            }
+
+            .coda-header-text .coda-pop-up-btn:hover .coda-left-arrow-ico {
+              -webkit-transform: translateX(25px);
+                  -ms-transform: translateX(25px);
+                      transform: translateX(25px);
+            }
+
+/* ------------------------------------------------------
+    3. Section
+------------------------------------------------------ */
+
+    .coda-section {
+      position: relative;
+      padding: 150px 0;
+    }
+
+    .coda-section:after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 50%;
+      bottom: -1px;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: 1140px;
+      height: 2px;
+      background-color: #eee;
+      z-index: -1;
+    }
+
+    .coda-section:last-of-type:after {
+      display: none;
+    }
+
+    /* ------------------------------------------------------
+        3.1 Section header
+    ------------------------------------------------------ */
+
+        .coda-section-header {
+          margin-bottom: 82px;
+        }
+
+        .coda-section-header .coda-description {
+          font-weight: 700;
+          line-height: .8;
+          text-transform: uppercase;
+          margin: 0 0 13px 5px;
+        }
+
+        .coda-section-header h2 {
+          margin: 0;
+        }
+
+    /* ------------------------------------------------------
+        3.2. Portfolio section
+    ------------------------------------------------------ */
+
+        /* ------------------------------------------------------
+            3.2.1. Portfolio filter navigation
+        ------------------------------------------------------ */
+
+            .coda-filter-nav {
+              margin: 0 0 23px 5px;
+              padding: 0;
+            }
+
+            .coda-filter-nav .coda-filter-nav-item {
+              list-style-type: none;
+              display: inline-block;
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 1;
+              margin: 0 34px 14px 0;
+              color: #5d5d5d;
+              cursor: pointer;
+            }
+
+            .coda-filter-nav .coda-filter-nav-item.coda-underscore {
+              -webkit-background-size: 0px 9px;
+              background-size: 0px 9px;
+              background-position: right 100%;
+            }
+
+            .coda-filter-nav .coda-filter-nav-item.coda-underscore:hover, .coda-filter-nav .coda-filter-nav-item.coda-underscore.coda-active {
+              -webkit-background-size: 95% 9px;
+              background-size: 95% 9px;
+              background-position: left 100%;
+              color: #272727;
+            }
+
+            .coda-filter-nav .coda-filter-nav-item:last-child {
+              margin-right: 0;
+            }
+
+        /* ------------------------------------------------------
+            3.2.2. Portfolio filter item
+        ------------------------------------------------------ */
+
+            .coda-filter-container .coda-filter-item {
+              padding-top: 30px;
+            }
+
+            .coda-filter-container .coda-filter-item .coda-portfolio-item {
+              display: block;
+              width: 100%;
+              overflow: hidden;
+              -webkit-transform: translate(0);
+                  -ms-transform: translate(0);
+                      transform: translate(0);
+            }
+
+            .coda-filter-container .coda-filter-item .coda-img {
+              -webkit-transition: all 1s ease-in-out;
+              -o-transition: all 1s ease-in-out;
+              transition: all 1s ease-in-out;
+            }
+
+            .coda-filter-container .coda-filter-item:hover .coda-img {
+              -webkit-transform: scale(1.1);
+                  -ms-transform: scale(1.1);
+                      transform: scale(1.1);
+            }
+
+            .coda-filter-container .coda-filter-item .coda-portfolio-item-content {
+              position: absolute;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding: 0 70px 70px;
+              z-index: 1;
+            }
+
+            .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header {
+              margin-top: auto;
+              max-width: 100%;
+            }
+
+            .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header h3 {
+              word-wrap: break-word;
+              margin: 0;
+              text-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header h3 .coda-underscore {
+              color: #fff;
+              -webkit-background-size: 0px 30px;
+                      background-size: 0px 30px;
+              background-position: right 80%;
+            }
+
+            .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header h3 .coda-underscore:hover, .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header h3 .coda-underscore.coda-active {
+              color: #fff;
+              -webkit-background-size: 95% 30px;
+                      background-size: 95% 30px;
+              background-position: left 80%;
+            }
+
+    /* ------------------------------------------------------
+        3.3. Experience section
+    ------------------------------------------------------ */
+
+        .coda-section.coda-experience-section {
+          padding: 150px 0 142px;
+        }
+
+        /* ------------------------------------------------------
+            3.3.1. Experience filter navigation
+        ------------------------------------------------------ */
+
+            .coda-experience-filter-nav {
+              margin: 0 0 51px 5px;
+              padding: 0;
+            }
+
+            .coda-experience-filter-nav .coda-filter-nav-item {
+              list-style-type: none;
+              display: inline-block;
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 1;
+              margin-right: 34px;
+              color: #5d5d5d;
+              cursor: pointer;
+            }
+
+            .coda-experience-filter-nav .coda-filter-nav-item.coda-underscore {
+              -webkit-background-size: 0px 9px;
+                      background-size: 0px 9px;
+              background-position: right 100%;
+            }
+
+            .coda-experience-filter-nav .coda-filter-nav-item.coda-underscore:hover, .coda-experience-filter-nav .coda-filter-nav-item.coda-underscore.coda-active {
+              -webkit-background-size: 95% 9px;
+                      background-size: 95% 9px;
+              background-position: left 100%;
+              color: #272727;
+            }
+
+            .coda-experience-filter-nav .coda-filter-nav-item:last-child {
+              margin-right: 0;
+            }
+
+        /* ------------------------------------------------------
+            3.3.2. Experience timeline
+        ------------------------------------------------------ */
+
+            .coda-experience-timeline-content .coda-experience-timeline {
+              position: relative;
+              display: none;
+              padding-left: 53px;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline.coda-active {
+              -webkit-transform: translateZ(0);
+                      transform: translateZ(0);
+              display: block;
+              -webkit-animation: codaFadeIn .5s;
+                      animation: codaFadeIn .5s;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline:before {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 3px;
+              height: 100%;
+              background-color: #eee;
+              top: 0;
+              left: 22px;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-timeline-label {
+              font-size: 14px;
+              letter-spacing: 1px;
+              position: absolute;
+              -webkit-transform: rotate(-90deg) translateX(25%);
+                  -ms-transform: rotate(-90deg) translateX(25%);
+                      transform: rotate(-90deg) translateX(25%);
+              left: -23px;
+              top: 50%;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption {
+              -webkit-transform: translateZ(0);
+                      transform: translateZ(0);
+              position: relative;
+              margin: 0 0 41px;
+              -webkit-animation: codaFadeIn .7s;
+                      animation: codaFadeIn .7s;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption:last-child,
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption:last-child h4 {
+              margin: 0;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption:before {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 3px;
+              height: 15px;
+              top: 10px;
+              left: -31px;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption .coda-time-interval {
+              font-size: 14px;
+              letter-spacing: 3px;
+              line-height: 1;
+              padding-top: 10px;
+              margin: 0 0 3px 2px;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption .coda-underscore {
+              -webkit-background-size: 0% 25px;
+                      background-size: 0% 25px;
+              background-position: right 80%;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption .coda-underscore:hover {
+              -webkit-background-size: 97% 25px;
+                      background-size: 97% 25px;
+              background-position: left 80%;
+              cursor: pointer;
+            }
+
+            .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption.coda-active .coda-underscore {
+              -webkit-background-size: 97% 25px;
+                      background-size: 97% 25px;
+              background-position: left 80%;
+            }
+
+        /* ------------------------------------------------------
+            3.3.3. Experience content
+        ------------------------------------------------------ */
+
+            .coda-experience-content {
+              margin-top: -4px;
+            }
+
+            .coda-experience-content .coda-experience-description-item {
+              display: none;
+            }
+
+            .coda-experience-content .coda-experience-description-item.coda-active {
+              display: block;
+            }
+
+            .coda-experience-content .coda-experience-description-item .coda-experience-description {
+              display: none;
+            }
+
+            .coda-experience-content .coda-experience-description-item .coda-experience-description.coda-active {
+              -webkit-transform: translateZ(0);
+                      transform: translateZ(0);
+              display: block;
+              -webkit-animation: codaFadeIn .5s;
+                      animation: codaFadeIn .5s;
+            }
+
+            .coda-experience-content .coda-experience-description-item .coda-experience-description .coda-time-interval {
+              letter-spacing: 3px;
+              line-height: 1;
+              margin: 0 0 5px 2px;
+            }
+
+            .coda-experience-content .coda-experience-description-item .coda-experience-description h3 {
+              margin-bottom: 32px;
+            }
+
+            .coda-experience-content .coda-experience-description-item .coda-experience-description p:last-child {
+              margin-bottom: 0;
+            }
+
+    /* ------------------------------------------------------
+        3.4. Skills section
+    ------------------------------------------------------ */
+
+        .coda-skills-section.coda-skills-section {
+          padding: 150px 0 144px;
+        }
+
+        .coda-skills-section .coda-section-content {
+          position: relative;
+        }
+
+        .coda-skills-section .coda-section-content:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          margin-left: -1px;
+          width: 2px;
+          height: -webkit-calc(100% + 10px);
+          height: calc(100% + 10px);
+          background-color: #eee;
+        }
+
+        /* ------------------------------------------------------
+            3.4.1. Skills bar
+        ------------------------------------------------------ */
+
+            .coda-skills-section .coda-skills-bar-container .coda-skill-bar {
+              position: relative;
+              width: 100%;
+              height: 3px;
+              background-color: #eee;
+              margin-bottom: 85px;
+            }
+
+            .coda-skills-section .coda-skills-bar-container .coda-skill-bar:first-child {
+              margin-top: 35px;
+            }
+
+            .coda-skills-section .coda-skills-bar-container .coda-skill-bar:last-child {
+              margin-bottom: 6px;
+            }
+
+            .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-title, .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-percent {
+              letter-spacing: 3px;
+              line-height: 1;
+              position: absolute;
+              bottom: 0;
+              margin-bottom: 16px;
+            }
+
+            .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-title {
+              left: 5px;
+            }
+
+            .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-percent {
+              right: 1px;
+            }
+
+            .coda-skills-section .coda-skills-bar-container .coda-skill-bar .coda-skill-bar-bar {
+              width: 0;
+              height: 3px;
+            }
+
+        /* ------------------------------------------------------
+            3.4.2. Skills term
+        ------------------------------------------------------ */
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list {
+              margin: -34px 0 0;
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box {
+              position: relative;
+              display: inline-block;
+              margin: 34px 16px 0 0;
+              cursor: pointer;
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box:hover .coda-skill-term-name .coda-underscore {
+              background-position: left 85%;
+              -webkit-background-size: 85% 10px;
+                      background-size: 85% 10px;
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box:hover .coda-skill-term-description {
+              cursor: pointer;
+              visibility: visible;
+              pointer-events: auto;
+              opacity: 1;
+              -webkit-transform: translateY(0);
+                  -ms-transform: translateY(0);
+                      transform: translateY(0);
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-name {
+              display: inline;
+              letter-spacing: 3px;
+              line-height: 1;
+              font-weight: normal;
+              padding: 8px 11px 9px 14px;
+              border: 1px solid #eee;
+              cursor: pointer;
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-name .coda-underscore {
+              -webkit-background-size: 0px 10px;
+                      background-size: 0px 10px;
+              background-position: right 85%;
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              margin-left: -150px;
+              width: 300px;
+              padding: 9px 16px 14px 19px;
+              background-color: #eee;
+              margin-bottom: 44px;
+              visibility: hidden;
+              pointer-events: none;
+              opacity: 0;
+              -webkit-transform: translateZ(0) translateY(15%);
+                      transform: translateZ(0) translateY(15%);
+              -webkit-transition: all .5s ease-in-out;
+                   -o-transition: all .5s ease-in-out;
+                      transition: all .5s ease-in-out;
+              z-index: 1;
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description:after {
+              content: '';
+              display: block;
+              position: absolute;
+              left: 50%;
+              bottom: -10px;
+              margin-left: -10px;
+              width: 0;
+              height: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-top: 10px solid #eee;
+            }
+
+            .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description .coda-term-name {
+              letter-spacing: 3px;
+              font-weight: 700;
+            }
+
+            @-webkit-keyframes codaFadeIn {
+              0% {
+                -webkit-transform: translateY(10%);
+                        transform: translateY(10%);
+                opacity: 0;
+              }
+              100% {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+                opacity: 1;
+              }
+            }
+
+            @keyframes codaFadeIn {
+              0% {
+                -webkit-transform: translateY(10%);
+                        transform: translateY(10%);
+                opacity: 0;
+              }
+              100% {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+                opacity: 1;
+              }
+            }
+
+    /* ------------------------------------------------------
+        3.5. Contacts section
+    ------------------------------------------------------ */
+
+        .coda-section.coda-contacts-section {
+          padding: 150px 0 143px;
+        }
+
+        /* ------------------------------------------------------
+            3.5.1. Contact details
+        ------------------------------------------------------ */
+
+            .coda-contacts-section .coda-contacts-container .coda-contact-item {
+              margin-bottom: 15px;
+            }
+
+            .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-name {
+              display: inline-block;
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 1;
+              margin-bottom: 16px;
+              color: #5d5d5d;
+            }
+
+            .coda-contacts-section .coda-contacts-container,
+            .coda-contacts-section .coda-contacts-container .coda-contact-item:last-child,
+            .coda-contacts-section .coda-contacts-container .coda-contact-item:last-child .coda-contact-name,
+            .coda-contacts-section .coda-contacts-container .coda-contact-item:last-child .coda-contact-data {
+                margin-bottom: 0;
+            }
+
+            .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-data .coda-contact-link {
+              display: inline-block;
+              font-size: 24px;
+              line-height: 1;
+              letter-spacing: 4px;
+              margin: 0 24px 20px 0;
+              color: #272727;
+            }
+
+            .coda-contacts-section .coda-contacts-container .coda-contact-item:last-child .coda-contact-data .coda-contact-link {
+              margin: 11px 24px 0 0;
+            }
+
+            .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-data .coda-underscore {
+              padding-bottom: 2px;
+              -webkit-background-size: 0px 15px;
+                      background-size: 0px 15px;
+              background-position: right 100%;
+            }
+
+            .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-data .coda-underscore:hover {
+              background-position: left 100%;
+              -webkit-background-size: 93% 15px;
+                      background-size: 93% 15px;
+            }
+
+        /* ------------------------------------------------------
+            3.5.2. Contact form
+        ------------------------------------------------------ */
+
+            .coda-contacts-section .coda-contact-form {
+              margin-top: 1px;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box {
+              position: relative;
+              height: 40px;
+              margin-bottom: 50px;
+              z-index: 1;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-input {
+              display: block;
+              background-color: transparent;
+              border: none;
+              padding: 0 3px;
+              margin: 0;
+              width: 100%;
+              line-height: 40px;
+              letter-spacing: 1px;
+              vertical-align: middle;
+              height: 40px;
+              resize: none;
+              outline: none;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-label {
+              position: absolute;
+              display: block;
+              width: 100%;
+              letter-spacing: 1px;
+              line-height: 55px;
+              vertical-align: middle;
+              padding: 0 0 0 3px;
+              margin: 0;
+              bottom: 0;
+              z-index: 2;
+              -webkit-transition: all .2s ease-in-out;
+              -o-transition: all .2s ease-in-out;
+              transition: all .2s ease-in-out;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-bottom-border {
+              display: block;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 1px;
+              background-color: #272727;
+              z-index: 1;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-bottom-border:after {
+              content: '';
+              display: block;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 0;
+              height: 1px;
+              z-index: 2;
+              -webkit-transition: all .5s ease-in-out;
+              -o-transition: all .5s ease-in-out;
+              transition: all .5s ease-in-out;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-input.coda-label-up, .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:focus, .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:required:valid {
+              border: none;
+              -webkit-box-shadow: none;
+                      box-shadow: none;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-input.coda-label-up ~ .coda-label, .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:focus ~ .coda-label, .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:required:valid ~ .coda-label {
+              font-size: 12px;
+              line-height: 1em;
+              bottom: 45px;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:required:invalid {
+              border: none;
+              -webkit-box-shadow: none;
+                      box-shadow: none;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-input-box .coda-input:focus ~ .coda-bottom-border:after {
+              width: 100%;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-form-btn {
+              padding: 0 0 0 3px;
+              border: none;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              -webkit-background-size: 0% 10px;
+                      background-size: 0% 10px;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-form-btn .coda-left-arrow-ico:before {
+              background-color: #272727;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-form-btn .coda-left-arrow-ico:after {
+              border-color: #272727;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-form-btn:hover {
+              cursor: pointer;
+              -webkit-background-size: 95% 10px;
+                      background-size: 95% 10px;
+            }
+
+            .coda-contacts-section .coda-contact-form .coda-form-btn:hover .coda-left-arrow-ico {
+              -webkit-transform: translateX(25px);
+                  -ms-transform: translateX(25px);
+                      transform: translateX(25px);
+            }
+
+/* ------------------------------------------------------
+    4. Footer
+------------------------------------------------------ */
+
+    .coda-footer {
+      display: block;
+      background-color: #272727;
+      padding: 56px 0 70px;
+    }
+
+    .coda-footer .coda-footer-copyright {
+      font-size: 12px;
+      letter-spacing: 2px;
+      line-height: 1;
+      color: #5d5d5d;
+      margin: 0;
+    }
+
+    .coda-footer .coda-footer-info {
+      line-height: .8;
+      color: #fff;
+      margin: 0;
+    }
+
+/* ------------------------------------------------------
+    5. Pop-up window
+------------------------------------------------------ */
+
+    .coda-pop-up-window {
+      position: fixed;
+      display: block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      -webkit-transform: translateY(-10%);
+          -ms-transform: translateY(-10%);
+              transform: translateY(-10%);
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    .coda-pop-up-window .coda-pop-up-top-panel {
+      margin: 50px 0;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content {
+      color: #fff;
+      margin-bottom: 100px;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-pop-up-header h3 {
+      word-wrap: break-word;
+      margin-bottom: 32px;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content p:last-of-type {
+      margin: 0;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container {
+      position: relative;
+      padding: 54px 0 0;
+      margin: 52px 0 0;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container .coda-description-item {
+      margin: 0 0 28px;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container .coda-description-item .coda-description-name {
+      color: #5d5d5d;
+      line-height: 1;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container .coda-description-item .coda-description-data {
+      font-size: 18px;
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 60px;
+      -webkit-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-video-responsive {
+      position: relative;
+      padding-bottom: 56.5%;
+      overflow: hidden;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-video-responsive iframe, .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-video-responsive object, .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-video-responsive embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-img-responsive, .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-video-responsive {
+      margin-bottom: 30px;
+    }
+
+    .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-img-responsive:last-child, .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-video-responsive:last-child {
+      margin: 0;
+    }
+
+    .coda-menu .coda-nav ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .coda-menu .coda-nav .coda-menu-item {
+      font-family: "Abril Fatface", serif;
+      font-size: 72px;
+      color: #fff;
+      line-height: 1.5;
+      text-align: center;
+      list-style-type: none;
+    }
+
+    .coda-menu .coda-nav .coda-menu-item .coda-underscore {
+      -webkit-background-size: 0px 40px;
+              background-size: 0px 40px;
+      color: #fff;
+    }
+
+    .coda-menu .coda-nav .coda-menu-item .coda-underscore:hover, .coda-menu .coda-nav .coda-menu-item .coda-underscore.coda-active {
+      color: #fff;
+      -webkit-background-size: 95% 40px;
+              background-size: 95% 40px;
+    }
+
+    .coda-pop-up-open {
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+          -ms-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+
+/* ------------------------------------------------------
+    6. Media queries
+------------------------------------------------------ */
+
+    @media (max-width: 1200px) {
+
+        /* ------------------------------------------------------
+            Section
+        ------------------------------------------------------ */
+
+        .coda-section:after {
+          width: 960px;
+        }
+
+    }
+
+    @media (max-width: 1199px) {
+
+        /* ------------------------------------------------------
+            Portfolio section
+        ------------------------------------------------------ */
+
+        .coda-filter-container .coda-filter-item .coda-portfolio-item-content {
+          padding: 0 50px 60px;
+        }
+
+    }
+
+    @media (max-width: 992px) {
+
+        /* ------------------------------------------------------
+            Section
+        ------------------------------------------------------ */
+
+        .coda-section:after {
+          width: 720px;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+
+        /* ------------------------------------------------------
+            Section
+        ------------------------------------------------------ */
+
+        .coda-section:after {
+          width: 540px;
+        }
+
+    }
+
+    @media (max-width: 767px) {
+
+        /* ------------------------------------------------------
+            Typography
+        ------------------------------------------------------ */
+
+        body {
+          font-size: 14px;
+        }
+
+        h1 {
+          font-size: 60px;
+        }
+
+        h2 {
+          font-size: 48px;
+        }
+
+        h3 {
+          font-size: 36px;
+        }
+
+        h4 {
+          font-size: 30px;
+        }
+
+        h5 {
+          font-size: 24px;
+        }
+
+        h6 {
+          font-size: 18px;
+        }
+
+        p {
+          margin-bottom: .7rem;
+        }
+
+        /* ------------------------------------------------------
+            Header
+        ------------------------------------------------------ */
+
+        .coda-header .coda-background-img {
+          -o-object-position: 70% 50%;
+             object-position: 70% 50%;
+        }
+
+        .coda-header-text .coda-profession {
+          font-size: 14px;
+          letter-spacing: 3px;
+          margin-bottom: 5px;
+        }
+
+        .coda-header-text .coda-name {
+          font-size: 72px;
+        }
+
+        .coda-header-text .coda-pop-up-btn {
+          margin-top: 44px;
+        }
+
+        /* ------------------------------------------------------
+            Section
+        ------------------------------------------------------ */
+
+        .coda-section {
+          padding: 100px 0;
+        }
+
+        .coda-section::after {
+          bottom: -2px;
+        }
+
+        .coda-section-header {
+          margin-bottom: 48px;
+        }
+
+        .coda-skills-section .coda-section-header {
+          margin-bottom: 43px;
+        }
+
+        .coda-section-header .coda-description {
+          font-size: 14px;
+          margin: 0 0 13px 3px;
+        }
+
+        /* ------------------------------------------------------
+            Portfolio and Experience section
+        ------------------------------------------------------ */
+        .coda-filter-nav {
+            margin: 0 0 9px 5px;
+        }
+
+        .coda-experience-filter-nav {
+          margin: 0 0 22px 5px;
+        }
+
+        .coda-filter-nav .coda-filter-nav-item, .coda-experience-filter-nav .coda-filter-nav-item {
+          font-size: 16px;
+        }
+
+        .coda-filter-nav .coda-filter-nav-item.coda-underscore, .coda-experience-filter-nav .coda-filter-nav-item.coda-underscore {
+          -webkit-background-size: 0px 8px;
+                  background-size: 0px 8px;
+        }
+
+        .coda-filter-nav .coda-filter-nav-item.coda-underscore:hover, .coda-filter-nav .coda-filter-nav-item.coda-underscore.coda-active, .coda-experience-filter-nav .coda-filter-nav-item.coda-underscore:hover, .coda-experience-filter-nav .coda-filter-nav-item.coda-underscore.coda-active {
+          -webkit-background-size: 95% 8px;
+                  background-size: 95% 8px;
+        }
+
+        /* ------------------------------------------------------
+            Portfolio section
+        ------------------------------------------------------ */
+
+        .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header h3 .coda-underscore {
+          -webkit-background-size: 0px 20px;
+                  background-size: 0px 20px;
+        }
+
+        .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header h3 .coda-underscore:hover, .coda-filter-container .coda-filter-item .coda-portfolio-item-content .coda-portfolio-item-header h3 .coda-underscore.coda-active {
+          -webkit-background-size: 95% 20px;
+                  background-size: 95% 20px;
+        }
+
+        .coda-filter-container .coda-filter-item:first-child {
+            padding-top: 15px;
+        }
+
+        .coda-filter-container .coda-filter-item .coda-portfolio-item-content {
+            padding: 0 50px 50px;
+        }
+
+        /* ------------------------------------------------------
+            Experience section
+        ------------------------------------------------------ */
+
+        .coda-section.coda-experience-section {
+          padding: 100px 0 93px;
+        }
+
+        .coda-experience-timeline-content .coda-experience-timeline {
+          margin-bottom: 55px;
+        }
+
+        .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption {
+          margin: 0 0 20px;
+        }
+
+        .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption .coda-time-interval {
+          font-size: 12px;
+          letter-spacing: 2px;
+        }
+
+        .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption .coda-underscore {
+          -webkit-background-size: 0% 15px;
+                  background-size: 0% 15px;
+        }
+
+        .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption .coda-underscore:hover {
+          -webkit-background-size: 97% 15px;
+                  background-size: 97% 15px;
+        }
+
+        .coda-experience-timeline-content .coda-experience-timeline .coda-experience-timeline-caption.coda-active .coda-underscore {
+          -webkit-background-size: 97% 15px;
+                  background-size: 97% 15px;
+        }
+
+        .coda-experience-content .coda-experience-description-item .coda-experience-description .coda-time-interval {
+          font-size: 14px;
+          letter-spacing: 2px;
+          margin: 0 0 2px
+        }
+
+        .coda-experience-content .coda-experience-description-item .coda-experience-description h3 {
+          margin-bottom: 15px;
+        }
+
+        /* ------------------------------------------------------
+            Skills section
+        ------------------------------------------------------ */
+
+        .coda-skills-section.coda-skills-section {
+            padding: 100px 0 107px;
+        }
+
+        .coda-skills-section .coda-section-content:after {
+          display: none;
+        }
+
+        .coda-skills-section .coda-skills-bar-container {
+          margin-bottom: 61px;
+        }
+
+        .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box {
+          position: static;
+        }
+
+        .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description {
+          left: 0;
+          margin: 0 0 28px 15px;
+          width: 500px;
+          bottom: 100%;
+        }
+
+        .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box:hover .coda-skill-term-description {
+          -webkit-animation: codaFadeLeft .5s;
+          animation: codaFadeLeft .5s;
+        }
+
+        .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description::after {
+          top: 10px;
+          left: 0;
+          margin: 0 0 0 -20px;
+          border-left: 10px solid transparent;
+          border-right: 10px solid #eee;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+        }
+
+        /* ------------------------------------------------------
+            Contacts section
+        ------------------------------------------------------ */
+
+        .coda-section.coda-contacts-section {
+          padding: 100px 0 94px;
+        }
+
+        .coda-contacts-section .coda-contacts-container {
+          margin-bottom: 43px;
+        }
+
+        .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-name {
+          font-size: 16px;
+          margin-bottom: 14px;
+        }
+
+        .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-data .coda-contact-link {
+          padding-bottom: 1px;
+          font-size: 18px;
+          letter-spacing: 2px;
+        }
+
+        .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-data .coda-underscore {
+          -webkit-background-size: 0px 12px;
+                  background-size: 0px 12px;
+        }
+
+        .coda-contacts-section .coda-contacts-container .coda-contact-item .coda-contact-data .coda-underscore:hover {
+          -webkit-background-size: 93% 12px;
+                  background-size: 93% 12px;
+        }
+
+        /* ------------------------------------------------------
+            Footer
+        ------------------------------------------------------ */
+
+        .coda-footer {
+          display: block;
+          background-color: #272727;
+          padding: 80px 0 75px;
+        }
+
+        .coda-footer .coda-footer-copyright {
+          font-size: 10px;
+          margin: 0 0 35px 0;
+        }
+
+        /* ------------------------------------------------------
+            Pop-up window
+        ------------------------------------------------------ */
+
+        .coda-pop-up-window .coda-pop-up-top-panel {
+          margin: 30px 0;
+        }
+
+        .coda-pop-up-window .coda-pop-up-content .coda-pop-up-header h3 {
+          margin-bottom: 15px;
+        }
+
+        .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container {
+          padding: 46px 0 0;
+          margin: 42px 0 0;
+        }
+
+        .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container .coda-description-item .coda-description-name {
+          font-size: 14px;
+        }
+
+        .coda-pop-up-window .coda-pop-up-content .coda-pop-up-footer .coda-description-container .coda-description-item .coda-description-data {
+          font-size: 16px;
+        }
+
+        .coda-pop-up-window .coda-pop-up-content .coda-sticky .coda-img-responsive:first-child {
+          margin-top: 58px;
+        }
+
+        .coda-menu .coda-nav .coda-menu-item {
+          font-size: 48px;
+          line-height: 1.5;
+        }
+
+        .coda-menu .coda-nav .coda-menu-item .coda-underscore {
+          -webkit-background-size: 0px 27px;
+                  background-size: 0px 27px;
+          color: #fff;
+        }
+
+        .coda-menu .coda-nav .coda-menu-item .coda-underscore:hover, .coda-menu .coda-nav .coda-menu-item .coda-underscore.coda-active {
+          color: #fff;
+          -webkit-background-size: 95% 27px;
+                  background-size: 95% 27px;
+        }
+
+    }
+
+    @media (max-width: 576px) {
+
+        /* ------------------------------------------------------
+            Header
+        ------------------------------------------------------ */
+
+        .coda-header .coda-top-panel .coda-menu-btn {
+          display: inline-block;
+          margin-right: 20px;
+        }
+
+        .coda-header-text .coda-name {
+          font-size: 66px;
+        }
+
+        /* ------------------------------------------------------
+            Section
+        ------------------------------------------------------ */
+
+        .coda-section:after {
+          width: 90%;
+        }
+
+        /* ------------------------------------------------------
+            Skills section
+        ------------------------------------------------------ */
+
+        .coda-skills-section .coda-skills-description .coda-skills-term-list .coda-skill-term-box .coda-skill-term-description {
+          width: 300px;
+        }
+
+    }
