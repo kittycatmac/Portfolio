@@ -782,7 +782,7 @@
       width: 2px;
       height: 50px;
       margin-left: -1px;
-      background-color: #fff;
+      /* background-color: #fff; */
       z-index: 1;
     }
 

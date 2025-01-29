@@ -88,41 +88,79 @@ $(function() {
         codaToggleClass();
     });
 
-    /* Filterizr script */
-    if ($('.filtr-container').length) {
-        var options = {
-            animationDuration: 0.5, // in seconds
-            filter: 'all', // Initial filter
-            controlsSelector: '', // Selector for custom controls
-            delay: 0, // Transition delay in ms
-            delayMode: 'progressive', // 'progressive' or 'alternate'
-            easing: 'ease-in-out',
-            filterOutCss: { // Filtering out animation
-                opacity: 0,
-                transform: 'scale(0.5)'
-            },
-            filterInCss: { // Filtering in animation
-                opacity: 0,
-                transform: 'scale(1)'
-            },
-            layout: 'sameWidth', // See layouts
-            multifilterLogicalOperator: 'or',
-            selector: '.filtr-container',
-            setupControls: true // Should be false if controlsSelector is set
+    // /* Filterizr script */
+    // if ($('.filtr-container').length) {
+    //     var options = {
+    //         animationDuration: 0.5, // in seconds
+    //         filter: 'all', // Initial filter
+    //         controlsSelector: '', // Selector for custom controls
+    //         delay: 0, // Transition delay in ms
+    //         delayMode: 'progressive', // 'progressive' or 'alternate'
+    //         easing: 'ease-in-out',
+    //         filterOutCss: { // Filtering out animation
+    //             opacity: 0,
+    //             transform: 'scale(0.5)'
+    //         },
+    //         filterInCss: { // Filtering in animation
+    //             opacity: 0,
+    //             transform: 'scale(1)'
+    //         },
+    //         layout: 'sameWidth', // See layouts
+    //         multifilterLogicalOperator: 'or',
+    //         selector: '.filtr-container',
+    //         setupControls: true // Should be false if controlsSelector is set
+    //     }
+
+    //     // You can override any of these options and then call...
+    //     $(window).on('load', function() {
+    //         $('.filtr-container').filterizr(options);
+    //     })
+
+    //     var navElementActive = options.filter;
+    //     $('.coda-filter-nav').find('.coda-filter-nav-item[data-filter="' + navElementActive + '"]').addClass('coda-active');
+    //     $('.coda-filter-nav .coda-filter-nav-item').on('click', function(){
+    //         $('.coda-filter-nav .coda-filter-nav-item').removeClass('coda-active');
+    //         $(this).addClass('coda-active');
+    //     });
+    // }
+
+    $(document).ready(function () {
+        if ($('.filtr-container').length) {
+            var options = {
+                animationDuration: 0.5, // in seconds
+                filter: 'all', // Initial filter
+                controlsSelector: '', // Selector for custom controls
+                delay: 0, // Transition delay in ms
+                delayMode: 'progressive', // 'progressive' or 'alternate'
+                easing: 'ease-in-out',
+                filterOutCss: { // Filtering out animation
+                    opacity: 0,
+                    transform: 'scale(0.5)'
+                },
+                filterInCss: { // Filtering in animation
+                    opacity: 1,
+                    transform: 'scale(1)'
+                },
+                layout: 'sameWidth', // See layouts
+                multifilterLogicalOperator: 'or',
+                selector: '.filtr-container',
+                setupControls: true // Should be false if controlsSelector is set
+            };
+    
+            // Initialize Filterizr
+            var filterizr = $('.filtr-container').filterizr(options);
+    
+            // Filter items when clicking filter options
+            $('.coda-filter-nav .coda-filter-nav-item').on('click', function () {
+                $('.coda-filter-nav .coda-filter-nav-item').removeClass('coda-active');
+                $(this).addClass('coda-active');
+    
+                var filterValue = $(this).attr('data-filter');
+                filterizr.filterizr('filter', filterValue);
+            });
         }
-
-        // You can override any of these options and then call...
-        $(window).on('load', function() {
-            $('.filtr-container').filterizr(options);
-        })
-
-        var navElementActive = options.filter;
-        $('.coda-filter-nav').find('.coda-filter-nav-item[data-filter="' + navElementActive + '"]').addClass('coda-active');
-        $('.coda-filter-nav .coda-filter-nav-item').on('click', function(){
-            $('.coda-filter-nav .coda-filter-nav-item').removeClass('coda-active');
-            $(this).addClass('coda-active');
-        });
-    }
+    });
+    
 
     /* Experience timeline script */
     if ($('.coda-experience-content').length) {
